@@ -20,3 +20,11 @@
   }
 ```
 
+需要注意的
+
+- Express.urlencoded({extends: false})中间件只能解析普通请求数据体
+- form-data格式的数据请求体,用到了multer来解析,会解析出revuest.body和request.file两个对象
+- 拿到前端请求的数据,首要的做的就是做数据校验,这里用到的是joi验证规则,结合jwt中间件
+- 在全局利用jwt中间件解析token
+- sql语句查询结果的差别,查询语句结果是数组,其他语句都是对象,通过affectedRows属性判断sql语句是否成功
+

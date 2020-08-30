@@ -26,6 +26,7 @@ app.use((err, res, next) => {
 //  全局解析token,以完成访问受保护页面的权鉴
 const expressJwt = require("express-jwt")
 const { jwtSecretKey } = require("./config")
+
 //  注册全局解析token中间件
 app.use(expressJwt({
     secret: jwtSecretKey
